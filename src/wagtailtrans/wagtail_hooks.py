@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, path
 from django.templatetags.static import static
 from django.urls import reverse
 from django.utils.encoding import force_str
@@ -29,7 +29,7 @@ modeladmin_register(LanguageModelAdmin)
 @hooks.register('register_admin_urls')
 def register_admin_urls():
     return [
-        url(r'^translate/', include(translations, namespace='wagtailtrans_translations')),
+        path('translate/', include(translations, namespace='wagtailtrans_translations')),
     ]
 
 
