@@ -57,7 +57,7 @@ if not get_wagtailtrans_setting('SYNC_TREE'):
             hook_name='wagtailtrans_dropdown_hook',
             page=page,
             page_perms=page_perms,
-            is_parent=is_parent,
+            # is_parent=is_parent,
             priority=10
         )
 
@@ -123,7 +123,7 @@ def edit_in_language_button(page, page_perms, is_parent=False, next_url=None):
         hook_name='wagtailtrans_dropdown_edit_hook',
         page=page,
         page_perms=page_perms,
-        is_parent=is_parent,
+        # is_parent=is_parent,
         priority=10
     )
 
