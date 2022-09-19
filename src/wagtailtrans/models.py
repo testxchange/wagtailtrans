@@ -13,7 +13,7 @@ from django.utils.translation import activate
 from django.utils.translation import gettext_lazy as _
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, PageChooserPanel
 from wagtail.admin.forms import WagtailAdminModelForm, WagtailAdminPageForm
-from wagtail.contrib.settings.models import BaseSetting
+from wagtail.contrib.settings.models import BaseSiteSetting
 from wagtail.contrib.settings.registry import register_setting
 from wagtail.core.models import Page, Site
 from wagtail.search.index import FilterField
@@ -404,7 +404,7 @@ def register_site_languages():
 
 
 @register_site_languages()
-class SiteLanguages(BaseSetting):
+class SiteLanguages(BaseSiteSetting):
     """Site specific settings are stored in the database"""
     default_language = models.ForeignKey(
         Language, related_name="site_default_language", null=True, on_delete=models.PROTECT)
